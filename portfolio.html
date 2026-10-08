@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – HA Carpentry | Our Work Gallery Rawalpindi Islamabad</title>
+  <meta name="description" content="Browse HA Carpentry's portfolio — real projects, real homes. Doors, kitchens, wardrobes, media walls across Rawalpindi & Islamabad. 20+ years of craftsmanship.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Extra portfolio grid styles ── */
+    .port-filter-bar{
+      background:var(--bg);padding:var(--sp3) 0 var(--sp2);
+    }
+    /* Masonry creative layout — alternating sizes */
+    .port-masonry{
+      columns:3;column-gap:var(--sp3);
+    }
+    .port-item{
+      break-inside:avoid;margin-bottom:var(--sp3);
+      border-radius:var(--r-md);overflow:hidden;
+      cursor:pointer;position:relative;display:block;
+      transition:transform var(--tr),box-shadow var(--tr);
+      border:1px solid rgba(201,169,110,.12);
+    }
+    .port-item:hover{
+      transform:scale(1.025);
+      box-shadow:var(--shd-gold);
+      border-color:rgba(201,169,110,.4);
+    }
+    .port-item img{
+      width:100%;display:block;
+      transition:transform .55s ease;
+    }
+    .port-item:hover img{transform:scale(1.06)}
+    /* Placeholder */
+    .port-ph{
+      width:100%;
+      background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.03));
+      display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:.4rem;
+      color:rgba(201,169,110,.35);font-size:1.8rem;
+      border-radius:var(--r-md);
+    }
+    .port-ph span{font-size:.72rem;color:var(--muted)}
+    /* Hover overlay */
+    .port-ov{
+      position:absolute;inset:0;
+      background:rgba(0,0,0,.5);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;transition:opacity var(--tr);
+    }
+    .port-ov i{font-size:1.5rem;color:var(--white)}
+    .port-item:hover .port-ov{opacity:1}
+    /* Tall cards for creative layout */
+    .port-item.tall .port-ph{min-height:320px}
+    .port-item.port-ph{min-height:200px}
+    @media(max-width:768px){
+      .port-masonry{columns:2;column-gap:var(--sp2)}
+      .port-item{margin-bottom:var(--sp2)}
+    }
+    @media(max-width:480px){
+      .port-masonry{columns:1}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nb-inner">
+      <a href="index.html" class="nb-logo" aria-label="Home">
+        <div class="nb-logo-wrap"><img src="logo.png" alt="HA Carpentry Logo"></div>
+      </a>
+      <ul class="nb-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doors.html">Door Designs</a></li>
+        <li><a href="wardrobe.html">Wardrobe Designs</a></li>
+        <li><a href="kitchen.html">Kitchen Designs</a></li>
+        <li><a href="mediawall.html">Media Walls</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mob-overlay"></div>
+  <div class="mob-menu">
+    <ul class="mob-links">
+      <li><a href="index.html"><i class="fa-solid fa-house fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Home</a></li>
+      <li><a href="doors.html"><i class="fa-solid fa-door-open fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Door Designs</a></li>
+      <li><a href="wardrobe.html"><i class="fa-solid fa-shirt fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Wardrobe Designs</a></li>
+      <li><a href="kitchen.html"><i class="fa-solid fa-utensils fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Kitchen Designs</a></li>
+      <li><a href="mediawall.html"><i class="fa-solid fa-tv fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Media Walls</a></li>
+      <li><a href="portfolio.html"><i class="fa-solid fa-images fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Portfolio</a></li>
+      <li><a href="disclaimer.html"><i class="fa-solid fa-file-lines fa-fw" style="color:var(--gold);margin-right:.4rem"></i>Disclaimer</a></li>
+    </ul>
+  </div>
+
+  <!-- ── PAGE BANNER ── -->
+  <section class="pg-banner">
+    <div class="pg-bc">
+      <h1>Our <span>Portfolio</span></h1>
+      <p>Real homes. Real craftsmanship. Every project tells a story.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Portfolio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAGE INTRO ── -->
+  <div class="pg-intro">
+    <div class="container">
+      <p>20+ years of craftsmanship captured in a single gallery. Browse our completed projects across Rawalpindi and Islamabad — from statement media walls to full kitchen renovations. Click any image to view full size.</p>
+    </div>
+  </div>
+
+  <!-- ── PORTFOLIO MASONRY GRID ── -->
+  <section style="padding:var(--sp3) 0 var(--sp7);background:var(--bg)">
+    <div class="container">
+
+      <!-- Stats strip above gallery -->
+      <div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:var(--sp5)">
+        <div style="text-align:center">
+          <p style="font-family:var(--ff-head);font-size:2rem;font-weight:800;color:var(--gold-dk)">7000+</p>
+          <p style="font-size:.8rem;color:var(--muted);letter-spacing:.8px">Projects Completed</p>
+        </div>
+        <div style="width:1px;background:rgba(201,169,110,.25)"></div>
+        <div style="text-align:center">
+          <p style="font-family:var(--ff-head);font-size:2rem;font-weight:800;color:var(--gold-dk)">20+</p>
+          <p style="font-size:.8rem;color:var(--muted);letter-spacing:.8px">Years Experience</p>
+        </div>
+        <div style="width:1px;background:rgba(201,169,110,.25)"></div>
+        <div style="text-align:center">
+          <p style="font-family:var(--ff-head);font-size:2rem;font-weight:800;color:var(--gold-dk)">500+</p>
+          <p style="font-size:.8rem;color:var(--muted);letter-spacing:.8px">Happy Clients</p>
+        </div>
+      </div>
+
+      <!-- Masonry Grid — replace portfolio1.png … portfolio12.png with your images -->
+      <div class="port-masonry">
+
+        <div class="port-item tall aos" data-lb="portfolio1.png">
+          <img src="portfolio1.png" alt="Portfolio 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph tall" style="display:none;min-height:280px"><i class="fa-solid fa-door-open"></i><span>portfolio1.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d1" data-lb="portfolio2.png">
+          <img src="portfolio2.png" alt="Portfolio 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:180px"><i class="fa-solid fa-shirt"></i><span>portfolio2.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d2" data-lb="portfolio3.png">
+          <img src="portfolio3.png" alt="Portfolio 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:240px"><i class="fa-solid fa-tv"></i><span>portfolio3.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d1" data-lb="portfolio4.png">
+          <img src="portfolio4.png" alt="Portfolio 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:200px"><i class="fa-solid fa-utensils"></i><span>portfolio4.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item tall aos d2" data-lb="portfolio5.png">
+          <img src="portfolio5.png" alt="Portfolio 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph tall" style="display:none;min-height:320px"><i class="fa-solid fa-door-open"></i><span>portfolio5.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d3" data-lb="portfolio6.png">
+          <img src="portfolio6.png" alt="Portfolio 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:180px"><i class="fa-solid fa-shirt"></i><span>portfolio6.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos" data-lb="portfolio7.png">
+          <img src="portfolio7.png" alt="Portfolio 7" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:220px"><i class="fa-solid fa-tv"></i><span>portfolio7.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d1" data-lb="portfolio8.png">
+          <img src="portfolio8.png" alt="Portfolio 8" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:190px"><i class="fa-solid fa-utensils"></i><span>portfolio8.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item tall aos d2" data-lb="portfolio9.png">
+          <img src="portfolio9.png" alt="Portfolio 9" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph tall" style="display:none;min-height:300px"><i class="fa-solid fa-door-open"></i><span>portfolio9.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d3" data-lb="portfolio10.png">
+          <img src="portfolio10.png" alt="Portfolio 10" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:200px"><i class="fa-solid fa-shirt"></i><span>portfolio10.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d1" data-lb="portfolio11.png">
+          <img src="portfolio11.png" alt="Portfolio 11" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:240px"><i class="fa-solid fa-tv"></i><span>portfolio11.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+        <div class="port-item aos d2" data-lb="portfolio12.png">
+          <img src="portfolio12.png" alt="Portfolio 12" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="port-ph" style="display:none;min-height:210px"><i class="fa-solid fa-utensils"></i><span>portfolio12.png</span></div>
+          <div class="port-ov"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+
+      </div><!-- /port-masonry -->
+
+      <!-- CTA after gallery -->
+      <div class="tc" style="margin-top:var(--sp6)">
+        <p style="font-family:var(--ff-head);font-size:1.4rem;color:var(--black);margin-bottom:.5rem">Love what you see?</p>
+        <p style="color:var(--muted);margin-bottom:var(--sp3)">Let's build something beautiful for your home too.</p>
+        <a href="https://wa.me/923424142499?text=Hi!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20HA%20Carpentry." target="_blank" class="btn btn-gold">
+          <i class="fab fa-whatsapp"></i> Start Your Project
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="foot-logo-wrap"><img src="logo.png" alt="HA Carpentry"></div>
+          <p class="foot-bname">HA Carpentry</p>
+          <p class="foot-btag">Custom Spaces · Better Living</p>
+          <p class="foot-bdesc">Premium carpentry services in Rawalpindi &amp; Islamabad since 2004.</p>
+          <div class="foot-social">
+            <a href="https://www.facebook.com/share/1HCa4uYsxS/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/hacarpentry4678" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@hacarpentry" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@hameed.ahmed443" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://maps.app.goo.gl/UmZr6S8he2fHRwqg9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="foot-col-h">Quick Links</h4>
+          <ul class="foot-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+            <li><a href="doors.html"><i class="fa-solid fa-chevron-right"></i>Door Designs</a></li>
+            <li><a href="wardrobe.html"><i class="fa-solid fa-chevron-right"></i>Wardrobe Designs</a></li>
+            <li><a href="kitchen.html"><i class="fa-solid fa-chevron-right"></i>Kitchen Designs</a></li>
+            <li><a href="mediawall.html"><i class="fa-solid fa-chevron-right"></i>Media Walls</a></li>
+            <li><a href="portfolio.html"><i class="fa-solid fa-chevron-right"></i>Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="foot-col-h">Our Work</h4>
+          <ul class="foot-links">
+            <li><a href="doors.html"><i class="fa-solid fa-chevron-right"></i>Doors Gallery</a></li>
+            <li><a href="wardrobe.html"><i class="fa-solid fa-chevron-right"></i>Wardrobe Gallery</a></li>
+            <li><a href="kitchen.html"><i class="fa-solid fa-chevron-right"></i>Kitchen Gallery</a></li>
+            <li><a href="mediawall.html"><i class="fa-solid fa-chevron-right"></i>Media Wall Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="foot-col-h">Contact</h4>
+          <div class="foot-ci"><i class="fab fa-whatsapp"></i><p><a href="https://wa.me/923424142499">+92 342 4142499</a></p></div>
+          <div class="foot-ci"><i class="fa-solid fa-location-dot"></i><p>Rawalpindi &amp; Islamabad</p></div>
+          <div class="foot-ci"><i class="fa-solid fa-location-dot"></i><p><a href="https://maps.app.goo.gl/UmZr6S8he2fHRwqg9" target="_blank">View on Google Maps</a></p></div>
+        </div>
+      </div>
+      <div class="foot-bottom"><p>&copy; 2024 <a href="index.html">HA Carpentry</a>. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923424142499?text=Hi!%20I%20want%20to%20discuss%20a%20carpentry%20project%20with%20HA%20Carpentry." class="wa-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i><span class="wa-txt">WhatsApp Us</span>
+  </a>
+  <div class="lightbox" id="lightbox"><button class="lb-close"><i class="fa-solid fa-xmark"></i></button><img src="" alt="Portfolio image preview"></div>
+  <script src="script.js"></script>
+</body>
+</html>
