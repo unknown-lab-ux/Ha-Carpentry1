@@ -933,3 +933,196 @@ button{cursor:pointer;font-family:var(--ff-body)}
   .port-masonry{columns:1}
   .rev-card{min-width:calc(100vw - var(--sp4))}
 }
+
+
+/* ============================================================
+   ABOUT SECTION — Append to end of style.css
+   ============================================================ */
+
+.about-sec { background: var(--bg-alt); }
+
+/* Two-column grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp6);
+  align-items: center;
+}
+
+/* ── Image Side ── */
+.about-img-side { position: relative; }
+
+.about-img-frame {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: visible;
+}
+
+.about-img-frame > img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  display: block;
+  box-shadow: var(--shd-lg);
+}
+
+/* Placeholder when about.png missing */
+.about-img-ph {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, rgba(201,169,110,.1), rgba(201,169,110,.03));
+  border: 1px solid rgba(201,169,110,.18);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-size: 3rem;
+  color: rgba(201,169,110,.35);
+}
+.about-img-ph span { font-size: .75rem; color: var(--muted); }
+
+/* Decorative gold corner accents */
+.about-deco-tr {
+  position: absolute;
+  top: -10px; right: -10px;
+  width: 70px; height: 70px;
+  border-top: 2.5px solid var(--gold);
+  border-right: 2.5px solid var(--gold);
+  border-radius: 0 var(--r-md) 0 0;
+  pointer-events: none;
+}
+.about-deco-bl {
+  position: absolute;
+  bottom: -10px; left: -10px;
+  width: 70px; height: 70px;
+  border-bottom: 2.5px solid var(--gold);
+  border-left: 2.5px solid var(--gold);
+  border-radius: 0 0 0 var(--r-md);
+  pointer-events: none;
+}
+
+/* Floating experience badge on image */
+.about-badge {
+  position: absolute;
+  bottom: 20px; right: -20px;
+  background: var(--black);
+  border: 1px solid rgba(201,169,110,.35);
+  border-radius: var(--r-md);
+  padding: .9rem 1.3rem;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  min-width: 110px;
+}
+.ab-num {
+  display: block;
+  font-family: var(--ff-head);
+  font-size: 2rem;
+  font-weight: 900;
+  background: var(--grad-gold-s);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.ab-num sup { font-size: 1.1rem; }
+.ab-lbl {
+  display: block;
+  font-size: .63rem;
+  color: rgba(255,255,255,.55);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+
+/* ── Content Side ── */
+.about-title {
+  font-family: var(--ff-head);
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: var(--sp2);
+}
+.about-title span { color: var(--gold); }
+
+.about-divider {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: var(--sp3);
+}
+.about-divider-line {
+  width: 50px; height: 1px;
+  background: var(--gold-lt);
+}
+.about-divider i { font-size: .6rem; color: var(--gold); }
+
+.about-desc {
+  font-size: .91rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: var(--sp2);
+}
+.about-desc strong { color: var(--gold-dk); font-weight: 600; }
+
+/* Key points */
+.about-points {
+  margin-top: var(--sp3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+.about-point {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp2);
+  padding: var(--sp2);
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  transition: var(--tr);
+}
+.about-point:hover {
+  border-color: rgba(201,169,110,.2);
+  background: var(--bg-card);
+}
+.ap-ico {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--r-sm);
+  border: 1.5px solid var(--gold);
+  background: linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.02));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  color: var(--gold);
+  transition: var(--tr);
+}
+.about-point:hover .ap-ico {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 0 12px rgba(201,169,110,.4);
+}
+.ap-text strong {
+  display: block;
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: .15rem;
+}
+.ap-text span {
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-badge { right: 12px; bottom: 12px; }
+  .about-deco-tr, .about-deco-bl { display: none; }
+  .about-title { font-size: 1.7rem; }
+     }
