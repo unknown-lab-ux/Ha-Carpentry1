@@ -1143,3 +1143,25 @@ button{cursor:pointer;font-family:var(--ff-body)}
   .about-deco-tr, .about-deco-bl { display: none; }
   .about-title { font-size: 1.7rem; }
 }
+
+/* ── Design cards footer — mobile fix (name on top, button below) ── */
+@media (max-width: 768px) {
+  .dpg-foot {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .6rem;
+    padding: .8rem .7rem;
+    text-align: center;
+  }
+  .dpg-foot-name {
+    font-size: .8rem;
+    line-height: 1.3;
+  }
+  .dpg-foot .btn {
+    width: 100%;
+    justify-content: center;
+    padding: .6rem .5rem;
+    font-size: .78rem;
+    flex-shrink: 0;
+  }
+}
